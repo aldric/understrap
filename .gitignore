@@ -13,3 +13,12 @@ dist-product
 npm-debug.log
 
 /vendor/
+
+src/js/
+
+src/sass/
+
+src/sass/fontawesome
+src/sass/materialize
+css
+fonts

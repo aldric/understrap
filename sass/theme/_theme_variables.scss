@@ -1,3 +1,13 @@
 // Use this file to overwrite the basic Bootstrap variables and add your own variables
 // To overwrite a Bootstrap variable you don´t have to touch the Bootstrap folder. 
 // Just copy a variable from /sass/bootstrap/_variables.scss, paste it here and edit the value.
+$roboto-font-path: "../../node_modules/roboto-fontface/fonts/roboto/" !default;
+//$primary-color: #ef6c00 !default;
+$primary-color: #4285f4 !default;
+//$primary-color: #2D2D2D !default;
+$action-color: #4285f4 !default;
+$primary-color-light: lighten($primary-color, 15%) !default;
+$primary-color-light2: lighten($primary-color, 30%) !default;
+$primary-color-light3 :lighten($primary-color, 45%) !default;
+$primary-color-dark: darken($primary-color, 15%) !default; 
+$gray-200 : #CCC;

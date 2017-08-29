@@ -197,10 +197,10 @@ gulp.task('watch-bs', ['browser-sync', 'watch', 'scripts'], function () { });
 gulp.task('scripts', function() {
     var scripts = [
 
-        // Start - All BS4 stuff
-        basePaths.dev + 'js/bootstrap4/bootstrap.js',
+        // Start - All Materialize stuff
+        basePaths.dev + 'js/materialize/materialize.js',
 
-        // End - All BS4 stuff
+        // End - All Materialize stuff
 
         basePaths.dev + 'js/skip-link-focus-fix.js'
     ];
@@ -223,18 +223,18 @@ gulp.task('clean-source', function () {
 // gulp copy-assets.
 // Copy all needed dependency assets files from bower_component assets to themes /js, /scss and /fonts folder. Run this task after bower install or bower update
 
-////////////////// All Bootstrap SASS  Assets /////////////////////////
+////////////////// All MAterialize SASS  Assets /////////////////////////
 gulp.task('copy-assets', ['clean-source'], function() {
 
 ////////////////// All Bootstrap 4 Assets /////////////////////////
 // Copy all Bootstrap JS files
-    var stream = gulp.src(basePaths.node + 'bootstrap/dist/js/**/*.js')
-       .pipe(gulp.dest(basePaths.dev + '/js/bootstrap4'));
+    var stream = gulp.src(basePaths.node + 'materialize-css/dist/js/**/*.js')
+       .pipe(gulp.dest(basePaths.dev + '/js/materialize'));
   
 
 // Copy all Bootstrap SCSS files
-    gulp.src(basePaths.node + 'bootstrap/scss/**/*.scss')
-       .pipe(gulp.dest(basePaths.dev + '/sass/bootstrap4'));
+    gulp.src(basePaths.node + 'materialize-css/sass/**/*.scss')
+       .pipe(gulp.dest(basePaths.dev + '/sass/materialize'));
 
 ////////////////// End Bootstrap 4 Assets /////////////////////////
 
@@ -251,19 +251,19 @@ gulp.task('copy-assets', ['clean-source'], function() {
         .pipe(gulp.dest(basePaths.dev + '/js'));
 
 // _s SCSS files
-    gulp.src(basePaths.node + 'undescores-for-npm/sass/**/*.scss')
-        .pipe(gulp.dest(basePaths.dev + '/sass/underscores'));
+    // gulp.src(basePaths.node + 'undescores-for-npm/sass/**/*.scss')
+    //     .pipe(gulp.dest(basePaths.dev + '/sass/underscores'));
 
 // _s JS files
-    gulp.src(basePaths.node + 'undescores-for-npm/js/*.js')
-        .pipe(gulp.dest(basePaths.dev + '/js'));
+    // gulp.src(basePaths.node + 'undescores-for-npm/js/*.js')
+    //     .pipe(gulp.dest(basePaths.dev + '/js'));
 
 // Copy Popper JS files
-    gulp.src(basePaths.node + 'popper.js/dist/umd/popper.min.js')
-        .pipe(gulp.dest(basePaths.js));
+    // gulp.src(basePaths.node + 'popper.js/dist/umd/popper.min.js')
+    //     .pipe(gulp.dest(basePaths.js));
         
-    gulp.src(basePaths.node + 'popper.js/dist/umd/popper.js')
-        .pipe(gulp.dest(basePaths.js));
+    // gulp.src(basePaths.node + 'popper.js/dist/umd/popper.js')
+    //     .pipe(gulp.dest(basePaths.js));
     return stream;
 });
 

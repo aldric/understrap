@@ -1,5 +1,5 @@
 {
-  "name": "understrap",
+  "name": "under-materialize-css",
   "version": "0.6.5",
   "description": "Wordpress Theme framework",
   "main": "index.js",
@@ -11,23 +11,21 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/holger1411/understrap.git"
+    "url": "https://github.com/aldric/understrap.git"
   },
   "keywords": [
     "wordpress",
     "theme",
     "framework",
-    "bootstrap",
+    "materialize-css",
     "underscores"
   ],
-  "author": "Holger Koenemann",
+  "author": "Aldric Gaudinot",
   "license": "GPL-2.0",
   "bugs": {
     "url": "https://github.com/holger1411/understrap/issues"
   },
-  "homepage": "https://understrap.com",
   "dependencies": {
-    "bootstrap": "4.0.0-beta",
     "browser-sync": "^2.18.12",
     "del": "^3.0.0",
     "font-awesome": "^4.7.0",
@@ -48,9 +46,9 @@
     "gulp-uglify": "^3.0.0",
     "gulp-watch": "^4.3.11",
     "jquery": "3.2.1",
+    "materialize-css": "^0.100.2",
     "merge2": "^1.1.0",
-    "popper.js": "^1.11.1",
-    "run-sequence": "^2.0.0",
-    "undescores-for-npm": "^1.0.0"
+    "roboto-fontface": "^0.8.0",
+    "run-sequence": "^2.0.0"
   }
 }

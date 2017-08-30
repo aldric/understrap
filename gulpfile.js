@@ -66,7 +66,7 @@ gulp.task('scss-for-prod', function() {
 
 
     var pipe2 = source.pipe(clone())
-        .pipe(minify-css())
+        .pipe(cleanCSS({compatibility: '*'}))
         .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest('./css'));
 
@@ -119,7 +119,7 @@ gulp.task('sass', function () {
 // Starts watcher. Watcher runs gulp sass task on changes
 gulp.task('watch', function () {
     gulp.watch('./sass/**/*.scss', ['styles']);
-    gulp.watch([basePaths.dev + 'js/**/*.js','js/**/*.js','!js/theme.js','!js/theme.min.js'], ['scripts']);
+    gulp.watch([basePaths.dev + 'js/**/*.js','js/**/*.js', 'script.js', '!js/theme.js','!js/theme.min.js'], ['scripts']);
 
     //Inside the watch task.
     gulp.watch('./img/**', ['imagemin'])
@@ -202,7 +202,9 @@ gulp.task('scripts', function() {
 
         // End - All Materialize stuff
 
-        basePaths.dev + 'js/skip-link-focus-fix.js'
+        basePaths.dev + 'js/skip-link-focus-fix.js',
+
+        'script.js'
     ];
   gulp.src(scripts)
     .pipe(concat('theme.min.js'))
@@ -250,6 +252,8 @@ gulp.task('copy-assets', ['clean-source'], function() {
     gulp.src(basePaths.node + 'jquery/dist/*.js')
         .pipe(gulp.dest(basePaths.dev + '/js'));
 
+    gulp.src(basePaths.node + 'vue/dist/*.js')
+        .pipe(gulp.dest(basePaths.dev + '/js'));
 // _s SCSS files
     // gulp.src(basePaths.node + 'undescores-for-npm/sass/**/*.scss')
     //     .pipe(gulp.dest(basePaths.dev + '/sass/underscores'));

@@ -16,6 +16,7 @@ $container   = get_theme_mod( 'understrap_container_type' );
 $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 
 ?>
+<main class="site-main" id="main">
 
 <div class="wrapper" id="page-wrapper">
 
@@ -26,7 +27,6 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 			<!-- Do the left sidebar check -->
 			<?php get_template_part( 'global-templates/left-sidebar-check', 'none' ); ?>
 
-			<main class="site-main" id="main">
 
 				<?php while ( have_posts() ) : the_post(); ?>
 
@@ -41,7 +41,6 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 
 				<?php endwhile; // end of the loop. ?>
 
-			</main><!-- #main -->
 
 		</div><!-- #primary -->
 
@@ -57,5 +56,6 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 </div><!-- Container end -->
 
 </div><!-- Wrapper end -->
+</main><!-- #main -->
 
 <?php get_footer(); ?>

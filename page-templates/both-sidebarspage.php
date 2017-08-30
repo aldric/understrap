@@ -10,6 +10,7 @@
 get_header();
 $container = get_theme_mod( 'understrap_container_type' );
 ?>
+<main class="site-main" id="main" role="main">
 
 <div class="wrapper" id="page-wrapper">
 
@@ -21,13 +22,12 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 			<div
 				class="<?php
-					if ( is_active_sidebar( 'left-sidebar' ) xor is_active_sidebar( 'right-sidebar' ) ) : ?>col-md-8<?php
-					elseif ( is_active_sidebar( 'left-sidebar' ) && is_active_sidebar( 'right-sidebar' ) ) : ?>col-md-4<?php
-					else : ?>col-md-12<?php
+					if ( is_active_sidebar( 'left-sidebar' ) xor is_active_sidebar( 'right-sidebar' ) ) : ?>col m8<?php
+					elseif ( is_active_sidebar( 'left-sidebar' ) && is_active_sidebar( 'right-sidebar' ) ) : ?>col m4<?php
+					else : ?>col m12<?php
 					endif; ?> content-area"
 				id="primary">
 
-				<main class="site-main" id="main" role="main">
 
 					<?php while ( have_posts() ) : the_post(); ?>
 
@@ -42,7 +42,6 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 					<?php endwhile; // end of the loop. ?>
 
-				</main><!-- #main -->
 
 			</div><!-- #primary -->
 
@@ -53,5 +52,6 @@ $container = get_theme_mod( 'understrap_container_type' );
 	</div><!-- Container end -->
 
 </div><!-- Wrapper end -->
+</main><!-- #main -->
 
 <?php get_footer(); ?>

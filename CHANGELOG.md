@@ -39,7 +39,7 @@
                - Removing old and unused BS4 Alpha 5 variables
                - Include call to jQuery into if block - hx @wingertjp
                - phpcs fixes - thx @typeplus
-               - Fixing col-1 problem on my account WooCommerce page
+               - Fixing col s1 problem on my account WooCommerce page
                - Updating Font Awesome imports
 
 

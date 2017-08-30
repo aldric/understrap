@@ -16,9 +16,7 @@ npm-debug.log
 
 src/js/
 
-src/sass/
-js/theme.js
+src/sass
+
 src/sass/fontawesome
 src/sass/materialize
-css
-fonts

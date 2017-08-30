@@ -25,19 +25,19 @@ if ( ! function_exists( 'slbd_count_widgets' ) ) {
 			$widget_classes = 'widget-count-' . count( $sidebars_widgets_count[ $sidebar_id ] );
 			if ( $widget_count % 4 == 0 || $widget_count > 6 ) :
 				// Four widgets per row if there are exactly four or more than six
-				$widget_classes .= ' col-md-3';
+				$widget_classes .= ' col m3';
 			elseif ( 6 == $widget_count ) :
 				// If two widgets are published
-				$widget_classes .= ' col-md-2';
+				$widget_classes .= ' col m2';
 			elseif ( $widget_count >= 3 ) :
 				// Three widgets per row if there's three or more widgets 
-				$widget_classes .= ' col-md-4';
+				$widget_classes .= ' col m4';
 			elseif ( 2 == $widget_count ) :
 				// If two widgets are published
-				$widget_classes .= ' col-md-6';
+				$widget_classes .= ' col m6';
 			elseif ( 1 == $widget_count ) :
 				// If just on widget is active
-				$widget_classes .= ' col-md-12';
+				$widget_classes .= ' col m12';
 			endif; 
 			return $widget_classes;
 		endif;

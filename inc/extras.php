@@ -107,3 +107,46 @@ if ( ! function_exists( 'understrap_post_nav' ) ) :
 		<?php
 	}
 endif;
+
+if ( !function_exists('supermag_list_category') ) :
+    function supermag_list_category( $post_id = 0 ) {
+        if( 0 == $post_id ){
+            global $post;
+            if( isset( $post->ID )){
+                $post_id = $post->ID;
+            }
+            else{
+                return null;
+            }
+
+        }
+        $categories = get_the_category($post_id);
+        $separator = '&nbsp;';
+        $output = '';
+        if($categories) {
+            $output .= '<span class="cat-links">';
+            foreach($categories as $category) {
+                $output .= '<a class="at-cat-item-'.esc_attr($category->term_id).'" href="'.esc_url( get_category_link( $category->term_id ) ).'"  rel="category tag">'.$category->cat_name.'</a>'.$separator;
+            }
+            $output .='</span>';
+            echo trim($output, $separator);
+        }
+    }
+endif;
+
+
+if ( ! function_exists( 'supermag_words_count' ) ) :
+	
+		function supermag_words_count( $supermag_content = null, $length = 16 ) {
+	
+			$length = absint( $length );
+	
+			$source_content = preg_replace( '`\[[^\]]*\]`', '', $supermag_content );
+	
+			$trimmed_content = wp_trim_words( $source_content, $length, '...' );
+	
+			return $trimmed_content;
+	
+		}
+	
+	endif;
